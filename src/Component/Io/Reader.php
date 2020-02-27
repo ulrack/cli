@@ -32,7 +32,7 @@ class Reader implements ReaderInterface
      */
     public function __construct(
         string $streamInput = 'php://stdin',
-        string $mode = 'r+b'
+        string $mode = 'rb'
     ) {
         $this->streamInput = $streamInput;
         $this->mode = $mode;

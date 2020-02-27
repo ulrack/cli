@@ -112,7 +112,11 @@ class BlockElement implements ElementInterface
             $this->writer->writeLine('');
         }
 
-        $content = str_split($this->content, $contentSize);
+        $expContent = explode(PHP_EOL, $this->content);
+        $content = [];
+        foreach ($expContent as $exp) {
+            $content = array_merge($content, str_split($exp, $contentSize));
+        }
 
         foreach ($content as $line) {
             $this->writer->write(str_repeat(' ', $marginLeft));

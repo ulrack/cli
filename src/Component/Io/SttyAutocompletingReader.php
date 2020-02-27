@@ -121,7 +121,7 @@ class SttyAutocompletingReader implements ReaderInterface
         PointerInterface $pointer,
         StyleInterface $autocompleteStyle,
         string $streamInput = 'php://stdin',
-        string $mode = 'r+b'
+        string $mode = 'rb'
     ) {
         $this->options = $options;
         $this->writer = $writer;
