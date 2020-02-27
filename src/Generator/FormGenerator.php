@@ -234,6 +234,7 @@ class FormGenerator implements FormGeneratorInterface
      *
      * @param string $name
      * @param bool $required
+     * @param string $default
      * @param string $additionalMessage
      * @param string $errorMessage
      * @param ValidatorInterface ...$additionalValidators
@@ -245,6 +246,7 @@ class FormGenerator implements FormGeneratorInterface
     public function addOpenArrayField(
         string $name,
         bool $required = true,
+        string $default = 'y',
         string $additionalMessage = 'Add another value?',
         string $errorMessage = 'This is a required field.',
         ValidatorInterface ...$additionalValidators
@@ -257,14 +259,22 @@ class FormGenerator implements FormGeneratorInterface
         );
 
         $label = $this->elementFactory->createText($title, false, 'label');
-        $additionalLabel = $this->createAdditionalMessage($additionalMessage);
+        $additionalLabel = $this->createAdditionalMessage(
+            $additionalMessage,
+            $default
+        );
+
         $validator = $this->createValidator(
             $required,
             $errorMessage,
             ...$additionalValidators
         );
 
-        $field = $this->formFactory->createArrayField($label, $additionalLabel);
+        $field = $this->formFactory->createArrayField(
+            $label,
+            $additionalLabel,
+            $default
+        );
 
         $this->form->addField($name, $field, $validator);
 
@@ -276,6 +286,7 @@ class FormGenerator implements FormGeneratorInterface
      *
      * @param string $name
      * @param bool $required
+     * @param string $default
      * @param string $additionalMessage
      * @param string $errorMessage
      * @param ValidatorInterface ...$additionalValidators
@@ -287,6 +298,7 @@ class FormGenerator implements FormGeneratorInterface
     public function addHiddenArrayField(
         string $name,
         bool $required = true,
+        string $default = 'y',
         string $additionalMessage = 'Add another value?',
         string $errorMessage = 'This is a required field.',
         ValidatorInterface ...$additionalValidators
@@ -298,7 +310,11 @@ class FormGenerator implements FormGeneratorInterface
         );
 
         $label = $this->elementFactory->createText($title, false, 'label');
-        $additionalLabel = $this->createAdditionalMessage($additionalMessage);
+        $additionalLabel = $this->createAdditionalMessage(
+            $additionalMessage,
+            $default
+        );
+
         $validator = $this->createValidator(
             $required,
             $errorMessage,
@@ -307,7 +323,8 @@ class FormGenerator implements FormGeneratorInterface
 
         $field = $this->formFactory->createObscuredArrayField(
             $label,
-            $additionalLabel
+            $additionalLabel,
+            $default
         );
 
         $this->form->addField($name, $field, $validator);
@@ -321,6 +338,7 @@ class FormGenerator implements FormGeneratorInterface
      * @param string $name
      * @param array $options
      * @param boolean $required
+     * @param string $default
      * @param string $additionalMessage
      * @param string $errorMessageRequired
      * @param string $errorMessageEnum
@@ -334,6 +352,7 @@ class FormGenerator implements FormGeneratorInterface
         string $name,
         array $options,
         bool $required = true,
+        string $default = 'y',
         string $additionalMessage = 'Add another value?',
         string $errorMessageRequired = 'This is a required field.',
         string $errorMessageEnum = 'The value must be in the options list.',
@@ -350,7 +369,10 @@ class FormGenerator implements FormGeneratorInterface
             $this->elementFactory->createText($title, false, 'label')
         );
 
-        $additionalLabel = $this->createAdditionalMessage($additionalMessage);
+        $additionalLabel = $this->createAdditionalMessage(
+            $additionalMessage,
+            $default
+        );
         $additionalValidators[] = new EnumValidator($options);
         $validator = $this->createValidator(
             $required,
@@ -361,7 +383,8 @@ class FormGenerator implements FormGeneratorInterface
         $field = $this->formFactory->createAutocompletingArrayField(
             $label,
             $additionalLabel,
-            new OptionProvider($options)
+            new OptionProvider($options),
+            $default
         );
 
         $this->form->addField($name, $field, $validator);
@@ -390,11 +413,17 @@ class FormGenerator implements FormGeneratorInterface
      *
      * @return ElementInterface
      */
-    private function createAdditionalMessage(string $additionalMessage): ElementInterface
-    {
+    private function createAdditionalMessage(
+        string $additionalMessage,
+        string $default = 'y'
+    ): ElementInterface {
         return $this->elementFactory->createText(
             sprintf(
-                '%s (y/n): ',
+                '%s (' .
+                    (strtolower($default) === 'y' ? 'Y' : 'y') .
+                    '/' .
+                    (strtolower($default) === 'n' ? 'N' : 'n') .
+                    '): ',
                 $additionalMessage
             ),
             false,

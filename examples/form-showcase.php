@@ -27,6 +27,7 @@ $form = $formGenerator->init(
 )->addOpenArrayField(
     'What\'s your name?',
     true,
+    'y',
     'Do you have any more?'
 )->addOpenField(
     'What is your age?',

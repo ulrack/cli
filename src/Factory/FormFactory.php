@@ -120,11 +120,13 @@ class FormFactory implements FormFactoryInterface
      */
     public function createArrayField(
         ElementInterface $label,
-        ElementInterface $extraLabel
+        ElementInterface $extraLabel,
+        string $default = 'y'
     ): FieldInterface {
         return new ArrayField(
             $this->ioFactory->createStandardReader(),
             $label,
+            $default,
             $this->createField($extraLabel)
         );
     }
@@ -139,11 +141,13 @@ class FormFactory implements FormFactoryInterface
      */
     public function createObscuredArrayField(
         ElementInterface $label,
-        ElementInterface $extraLabel
+        ElementInterface $extraLabel,
+        string $default = 'y'
     ): FieldInterface {
         return new ArrayField(
             $this->ioFactory->createHiddenReader(),
             $label,
+            $default,
             $this->createField($extraLabel)
         );
     }
@@ -154,6 +158,7 @@ class FormFactory implements FormFactoryInterface
      * @param ElementInterface $label
      * @param ElementInterface $extraLabel
      * @param OptionProviderInterface $optionProvider
+     * @param string $default
      * @param string $style
      *
      * @return FieldInterface
@@ -162,6 +167,7 @@ class FormFactory implements FormFactoryInterface
         ElementInterface $label,
         ElementInterface $extraLabel,
         OptionProviderInterface $optionProvider,
+        string $default = 'y',
         string $style = 'autocomplete'
     ): FieldInterface {
         return new ArrayField(
@@ -170,6 +176,7 @@ class FormFactory implements FormFactoryInterface
                 $this->theme->getStyle($style)
             ),
             $label,
+            $default,
             $this->createField($extraLabel)
         );
     }

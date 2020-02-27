@@ -29,7 +29,7 @@ class ArrayFieldTest extends TestCase
         $reader = $this->createMock(ReaderInterface::class);
         $label = $this->createMock(ElementInterface::class);
         $confirmationField = $this->createMock(FieldInterface::class);
-        $subject = new ArrayField($reader, $label, $confirmationField);
+        $subject = new ArrayField($reader, $label, 'a', $confirmationField);
 
         $reader->expects(static::exactly(2))
             ->method('read')

@@ -71,7 +71,8 @@ interface FormFactoryInterface
      */
     public function createArrayField(
         ElementInterface $label,
-        ElementInterface $extraLabel
+        ElementInterface $extraLabel,
+        string $default = 'y'
     ): FieldInterface;
 
     /**
@@ -84,7 +85,8 @@ interface FormFactoryInterface
      */
     public function createObscuredArrayField(
         ElementInterface $label,
-        ElementInterface $extraLabel
+        ElementInterface $extraLabel,
+        string $default = 'y'
     ): FieldInterface;
 
     /**
@@ -93,6 +95,7 @@ interface FormFactoryInterface
      * @param ElementInterface $label
      * @param ElementInterface $extraLabel
      * @param OptionProviderInterface $optionProvider
+     * @param string $default
      * @param string $style
      *
      * @return FieldInterface
@@ -101,6 +104,7 @@ interface FormFactoryInterface
         ElementInterface $label,
         ElementInterface $extraLabel,
         OptionProviderInterface $optionProvider,
+        string $default = 'y',
         string $style = 'autocomplete'
     ): FieldInterface;
 }

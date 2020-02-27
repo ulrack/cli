@@ -41,19 +41,29 @@ class ArrayField implements FieldInterface
     private $confirmationField;
 
     /**
+     * Contains the default value.
+     *
+     * @var string
+     */
+    private $default;
+
+    /**
      * Constructor.
      *
      * @param ReaderInterface $reader
      * @param ElementInterface $label
      * @param FieldInterface $confirmationField
+     * @param string $default
      */
     public function __construct(
         ReaderInterface $reader,
         ElementInterface $label,
+        string $default = 'y',
         FieldInterface $confirmationField = null
     ) {
         $this->reader = $reader;
         $this->label = $label;
+        $this->default = $default;
         $this->confirmationField = $confirmationField;
     }
 
@@ -73,9 +83,19 @@ class ArrayField implements FieldInterface
 
             $this->confirmationField->render();
             $confirm = strtolower($this->confirmationField->getInput());
-            while (!in_array($confirm, ['y', 'n'])) {
+
+            $check = ['y', 'n'];
+            if (in_array($this->default, $check)) {
+                $check[] = '';
+            }
+
+            while (!in_array($confirm, $check)) {
                 $this->confirmationField->render();
                 $confirm = strtolower($this->confirmationField->getInput());
+            }
+
+            if ($confirm === '') {
+                $confirm = $this->default;
             }
 
             if ($confirm === 'n') {

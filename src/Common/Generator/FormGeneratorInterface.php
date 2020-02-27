@@ -93,6 +93,7 @@ interface FormGeneratorInterface
      *
      * @param string $name
      * @param bool $required
+     * @param string $default
      * @param string $additionalMessage
      * @param string $errorMessage
      * @param ValidatorInterface ...$additionalValidators
@@ -102,6 +103,7 @@ interface FormGeneratorInterface
     public function addOpenArrayField(
         string $name,
         bool $required = true,
+        string $default = 'y',
         string $additionalMessage = 'Add another value?',
         string $errorMessage = 'This is a required field.',
         ValidatorInterface ...$additionalValidators
@@ -112,6 +114,7 @@ interface FormGeneratorInterface
      *
      * @param string $name
      * @param bool $required
+     * @param string $default
      * @param string $additionalMessage
      * @param string $errorMessage
      * @param ValidatorInterface ...$additionalValidators
@@ -121,6 +124,7 @@ interface FormGeneratorInterface
     public function addHiddenArrayField(
         string $name,
         bool $required = true,
+        string $default = 'y',
         string $additionalMessage = 'Add another value?',
         string $errorMessage = 'This is a required field.',
         ValidatorInterface ...$additionalValidators
@@ -132,6 +136,7 @@ interface FormGeneratorInterface
      * @param string $name
      * @param array $options
      * @param boolean $required
+     * @param string $default
      * @param string $additionalMessage
      * @param string $errorMessageRequired
      * @param string $errorMessageEnum
@@ -143,6 +148,7 @@ interface FormGeneratorInterface
         string $name,
         array $options,
         bool $required = true,
+        string $default = 'y',
         string $additionalMessage = 'Add another value?',
         string $errorMessageRequired = 'This is a required field.',
         string $errorMessageEnum = 'The value must be in the options list.',

@@ -341,7 +341,7 @@ class FormGeneratorTest extends TestCase
             ->method('createText')
             ->withConsecutive(
                 ['Name*: ', false, 'label'],
-                [$additionalMessage . ' (y/n): ', false, 'label']
+                [$additionalMessage . ' (Y/n): ', false, 'label']
             )->willReturnOnConsecutiveCalls($label, $additionalLabel);
 
         $elementFactory->expects(static::once())
@@ -370,6 +370,7 @@ class FormGeneratorTest extends TestCase
             $subject->addOpenArrayField(
                 $name,
                 $required,
+                'y',
                 $additionalMessage,
                 $errorMessage,
                 $additionalValidators
@@ -409,7 +410,7 @@ class FormGeneratorTest extends TestCase
             ->method('createText')
             ->withConsecutive(
                 ['Password(hidden): ', false, 'label'],
-                [$additionalMessage . ' (y/n): ', false, 'label']
+                [$additionalMessage . ' (Y/n): ', false, 'label']
             )->willReturnOnConsecutiveCalls($label, $additionalLabel);
 
         $elementFactory->expects(static::once())
@@ -438,6 +439,7 @@ class FormGeneratorTest extends TestCase
             $subject->addHiddenArrayField(
                 $name,
                 $required,
+                'y',
                 $additionalMessage,
                 $errorMessage,
                 $additionalValidators
@@ -480,7 +482,7 @@ class FormGeneratorTest extends TestCase
             ->method('createText')
             ->withConsecutive(
                 ['Option: ', false, 'label'],
-                [$additionalMessage . ' (y/n): ', false, 'label']
+                [$additionalMessage . ' (Y/n): ', false, 'label']
             )->willReturn($label, $additionalLabel);
 
         $elementFactory->expects(static::once())
@@ -522,6 +524,7 @@ class FormGeneratorTest extends TestCase
                 $name,
                 $options,
                 $required,
+                'y',
                 $additionalMessage,
                 $errorMessageRequired,
                 $errorMessageEnum,
