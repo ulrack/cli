@@ -7,11 +7,11 @@
 namespace Ulrack\Cli\Tests\Factory;
 
 use PHPUnit\Framework\TestCase;
+use GrizzIt\Task\Common\TaskListInterface;
 use Ulrack\Cli\Common\Element\ElementInterface;
 use Ulrack\Cli\Common\Factory\IoFactoryInterface;
 use Ulrack\Cli\Common\Theme\ThemeInterface;
 use Ulrack\Cli\Factory\ElementFactory;
-use Ulrack\Task\Common\TaskListInterface;
 
 /**
  * @coversDefaultClass \Ulrack\Cli\Factory\ElementFactory

@@ -6,7 +6,7 @@
 
 namespace Ulrack\Cli\Common\Factory;
 
-use Ulrack\Task\Common\TaskListInterface;
+use GrizzIt\Task\Common\TaskListInterface;
 use Ulrack\Cli\Common\Element\ElementInterface;
 
 interface ElementFactoryInterface

@@ -6,8 +6,8 @@
 
 namespace Ulrack\Cli\Common\Element\Form;
 
+use GrizzIt\Validator\Common\ValidatorInterface;
 use Ulrack\Cli\Common\Element\ElementInterface;
-use Ulrack\Validator\Common\ValidatorInterface;
 
 interface FieldValidatorInterface extends ValidatorInterface
 {

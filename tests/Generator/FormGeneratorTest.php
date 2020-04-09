@@ -7,10 +7,10 @@
 namespace Ulrack\Cli\Tests\Generator;
 
 use PHPUnit\Framework\TestCase;
+use GrizzIt\Validator\Common\ValidatorInterface;
 use Ulrack\Cli\Generator\FormGenerator;
 use Ulrack\Cli\Common\Element\FormInterface;
 use Ulrack\Cli\Common\Element\ElementInterface;
-use Ulrack\Validator\Common\ValidatorInterface;
 use Ulrack\Cli\Common\Io\OptionProviderInterface;
 use Ulrack\Cli\Exception\NotInitializedException;
 use Ulrack\Cli\Common\Element\Form\FieldInterface;

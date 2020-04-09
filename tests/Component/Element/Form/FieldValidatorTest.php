@@ -6,10 +6,10 @@
 
 namespace Ulrack\Cli\Tests\Component\Element\Form;
 
+use GrizzIt\Validator\Common\ValidatorInterface;
 use PHPUnit\Framework\TestCase;
 use Ulrack\Cli\Common\Element\ElementInterface;
 use Ulrack\Cli\Component\Element\Form\FieldValidator;
-use Ulrack\Validator\Common\ValidatorInterface;
 
 /**
  * @coversDefaultClass \Ulrack\Cli\Component\Element\Form\FieldValidator

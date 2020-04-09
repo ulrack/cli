@@ -1,5 +1,6 @@
 <?php
 
+use GrizzIt\Validator\Component\Textual\PatternValidator;
 use Ulrack\Cli\Factory\IoFactory;
 use Ulrack\Cli\Factory\FormFactory;
 use Ulrack\Cli\Factory\ThemeFactory;
@@ -7,7 +8,6 @@ use Ulrack\Cli\Factory\ElementFactory;
 use Ulrack\Cli\Generator\FormGenerator;
 use Ulrack\Cli\Generator\ThemeGenerator;
 use Ulrack\Cli\Component\Theme\DefaultTheme;
-use Ulrack\Validator\Component\Textual\PatternValidator;
 
 require_once(__DIR__ . '/../vendor/autoload.php');
 

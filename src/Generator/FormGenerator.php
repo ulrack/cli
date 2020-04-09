@@ -6,22 +6,22 @@
 
 namespace Ulrack\Cli\Generator;
 
+use GrizzIt\Validator\Common\ValidatorInterface;
+use GrizzIt\Validator\Component\Chain\OrValidator;
+use GrizzIt\Validator\Component\Chain\AndValidator;
+use GrizzIt\Validator\Component\Logical\AlwaysValidator;
+use GrizzIt\Validator\Component\Logical\EnumValidator;
+use GrizzIt\Validator\Component\Iterable\MinItemsValidator;
+use GrizzIt\Validator\Component\Textual\MinLengthValidator;
 use Ulrack\Cli\Common\Element\ElementInterface;
 use Ulrack\Cli\Common\Element\Form\FieldValidatorInterface;
 use Ulrack\Cli\Component\Io\OptionProvider;
 use Ulrack\Cli\Common\Element\FormInterface;
 use Ulrack\Cli\Exception\NotInitializedException;
-use Ulrack\Validator\Common\ValidatorInterface;
-use Ulrack\Validator\Component\Chain\OrValidator;
-use Ulrack\Validator\Component\Chain\AndValidator;
 use Ulrack\Cli\Common\Factory\FormFactoryInterface;
 use Ulrack\Cli\Component\Element\Form\FieldValidator;
-use Ulrack\Validator\Component\Logical\AlwaysValidator;
-use Ulrack\Validator\Component\Logical\EnumValidator;
 use Ulrack\Cli\Common\Factory\ElementFactoryInterface;
 use Ulrack\Cli\Common\Generator\FormGeneratorInterface;
-use Ulrack\Validator\Component\Iterable\MinItemsValidator;
-use Ulrack\Validator\Component\Textual\MinLengthValidator;
 
 class FormGenerator implements FormGeneratorInterface
 {

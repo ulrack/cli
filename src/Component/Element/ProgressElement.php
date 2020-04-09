@@ -6,9 +6,9 @@
 
 namespace Ulrack\Cli\Component\Element;
 
+use GrizzIt\Task\Common\TaskListInterface;
 use Ulrack\Cli\Common\Io\WriterInterface;
 use Ulrack\Cli\Component\Theme\VoidStyle;
-use Ulrack\Task\Common\TaskListInterface;
 use Ulrack\Cli\Common\Io\TerminalInterface;
 use Ulrack\Cli\Common\Theme\StyleInterface;
 use Ulrack\Cli\Common\Element\ElementInterface;

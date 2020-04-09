@@ -49,7 +49,7 @@ It simply renders all items on a new line in a given style.
 
 #### [ProgressElement](src/Component/Element/ProgressElement.php)
 The progress element is used for displaying a progress bar.
-This utilizes the `TaskList` from `ulrack/task` to render.
+This utilizes the `TaskList` from `grizz-it/task` to render.
 
 #### [TableElement](src/Component/Element/TableElement.php)
 The table element is a fully customizable (including the borders)
@@ -72,7 +72,7 @@ The other field type is an [ArrayField](src/Component/Element/Form/ArrayField.ph
 Both of these fields have customizable behaviour through their provided [Reader](src/Common/Io/ReaderInterface.php).
 
 Fields need to be accompanied by a [FieldValidator](src/Component/Element/Form/FieldValidator.php), when they are provided to the form.
-These validators are a combination of a `Validator` from the `ulrack/validator` package and an element for rendering an error.
+These validators are a combination of a `Validator` from the `grizz-it/validator` package and an element for rendering an error.
 
 ### IO
 
@@ -124,7 +124,7 @@ There are two options provided with the package.
 ### Theming
 Theming is used to differentiate the looks of elements used within the application.
 Styles can be retrieved with the [StyleEnum](src/Common/Theme/StyleEnum.php).
-To learn how to use enums, see the `ulrack/enum` package for more details.
+To learn how to use enums, see the `grizz-it/enum` package for more details.
 
 These enum styles can be bound to a [ConfigurableStyle](src/Component/Theme/ConfigurableStyle.php) to combine and render them.
 

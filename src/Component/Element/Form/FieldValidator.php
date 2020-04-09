@@ -8,7 +8,7 @@ namespace Ulrack\Cli\Component\Element\Form;
 
 use Ulrack\Cli\Common\Element\ElementInterface;
 use Ulrack\Cli\Common\Element\Form\FieldValidatorInterface;
-use Ulrack\Validator\Common\ValidatorInterface;
+use GrizzIt\Validator\Common\ValidatorInterface;
 
 class FieldValidator implements FieldValidatorInterface
 {

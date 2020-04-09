@@ -6,8 +6,8 @@
 
 namespace Ulrack\Cli\Common\Generator;
 
+use GrizzIt\Validator\Common\ValidatorInterface;
 use Ulrack\Cli\Common\Element\FormInterface;
-use Ulrack\Validator\Common\ValidatorInterface;
 
 interface FormGeneratorInterface
 {

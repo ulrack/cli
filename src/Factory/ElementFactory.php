@@ -6,6 +6,7 @@
 
 namespace Ulrack\Cli\Factory;
 
+use GrizzIt\Task\Common\TaskListInterface;
 use Ulrack\Cli\Common\Io\WriterInterface;
 use Ulrack\Cli\Common\Theme\ThemeInterface;
 use Ulrack\Cli\Component\Element\ListElement;
@@ -18,7 +19,6 @@ use Ulrack\Cli\Common\Factory\IoFactoryInterface;
 use Ulrack\Cli\Component\Element\ProgressElement;
 use Ulrack\Cli\Common\Factory\ElementFactoryInterface;
 use Ulrack\Cli\Component\Element\ExplainedListElement;
-use Ulrack\Task\Common\TaskListInterface;
 
 class ElementFactory implements ElementFactoryInterface
 {

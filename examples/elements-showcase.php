@@ -1,9 +1,9 @@
 <?php
 
+use GrizzIt\Task\Common\TaskInterface;
+use GrizzIt\Task\Component\TaskList;
 use Ulrack\Cli\Factory\IoFactory;
-use Ulrack\Task\Component\TaskList;
 use Ulrack\Cli\Factory\ThemeFactory;
-use Ulrack\Task\Common\TaskInterface;
 use Ulrack\Cli\Factory\ElementFactory;
 use Ulrack\Cli\Generator\ThemeGenerator;
 use Ulrack\Cli\Component\Theme\DefaultTheme;

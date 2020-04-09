@@ -6,7 +6,7 @@
 
 namespace Ulrack\Cli\Common\Theme;
 
-use Ulrack\Enum\Enum;
+use GrizzIt\Enum\Enum;
 
 /**
  * @method static StyleEnum RESET_ALL()
