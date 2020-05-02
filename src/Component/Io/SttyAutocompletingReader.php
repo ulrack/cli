@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
@@ -394,8 +395,10 @@ class SttyAutocompletingReader implements ReaderInterface
                     $this->autocompleteSelector--;
                 }
             } else {
-                if ($this->autocompleteSelector === -1
-                || $this->autocompleteSelector === count($optionKeys) - 1) {
+                if (
+                    $this->autocompleteSelector === -1
+                    || $this->autocompleteSelector === count($optionKeys) - 1
+                ) {
                     // Go to the first suggestion
                     $this->autocompleteSelector = 0;
                 } else {

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
@@ -91,7 +92,7 @@ class ProgressElement implements ElementInterface
     public function render(): void
     {
         $maxWidth = $this->terminal->getWidth();
-        $progressWidth = round($maxWidth*.6);
+        $progressWidth = round($maxWidth * .6);
         foreach ($this->taskList as $name => $percentage) {
             $this->writer->overWrite(
                 "\033[K" .
@@ -126,7 +127,7 @@ class ProgressElement implements ElementInterface
         $maxWidth = $maxWidth - 2;
         $innerProgress = 1;
         if ($progress > 0) {
-            $innerProgress = round($maxWidth * ($progress/100));
+            $innerProgress = round($maxWidth * ($progress / 100));
         }
         $leftOver = $maxWidth - $innerProgress;
 

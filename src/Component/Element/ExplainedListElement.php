@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
@@ -109,7 +110,8 @@ class ExplainedListElement implements ElementInterface
                 $depth
             ) . $key] = $item['description'];
 
-            if (isset($item['items'])
+            if (
+                isset($item['items'])
                 && !empty($item['items'])
             ) {
                 $return = array_merge(

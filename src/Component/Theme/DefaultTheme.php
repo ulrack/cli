@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
@@ -94,6 +95,10 @@ class DefaultTheme implements ApplicationThemeInterface
             ->addStyle(
                 'error-block',
                 StyleEnum::BACKGROUND_RED(),
+                StyleEnum::TEXT_BRIGHT_GRAY()
+            )->addStyle(
+                'success-block',
+                StyleEnum::BACKGROUND_GREEN(),
                 StyleEnum::TEXT_BRIGHT_GRAY()
             )->addStyle(
                 'label',

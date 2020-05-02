@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
@@ -56,53 +57,53 @@ use GrizzIt\Enum\Enum;
 class StyleEnum extends Enum
 {
     // Attributes
-    const RESET_ALL = '0';
-    const BOLD = '1';
-    const DIM = '2';
-    const CURSIVE = '3';
-    const UNDERLINE = '4';
-    const BLINK = '5';
-    const BLINK_2 = '6';
-    const INVERSE = '7';
-    const HIDDEN = '8';
-    const STRIKETHROUGH = '9';
-    const DOUBLE_UNDERLINE = '21';
+    public const RESET_ALL = '0';
+    public const BOLD = '1';
+    public const DIM = '2';
+    public const CURSIVE = '3';
+    public const UNDERLINE = '4';
+    public const BLINK = '5';
+    public const BLINK_2 = '6';
+    public const INVERSE = '7';
+    public const HIDDEN = '8';
+    public const STRIKETHROUGH = '9';
+    public const DOUBLE_UNDERLINE = '21';
 
     // Text colors
-    const TEXT_BLACK = '30';
-    const TEXT_RED = '31';
-    const TEXT_GREEN = '32';
-    const TEXT_YELLOW = '33';
-    const TEXT_BLUE = '34';
-    const TEXT_MAGENTA = '35';
-    const TEXT_CYAN = '36';
-    const TEXT_GRAY = '37';
+    public const TEXT_BLACK = '30';
+    public const TEXT_RED = '31';
+    public const TEXT_GREEN = '32';
+    public const TEXT_YELLOW = '33';
+    public const TEXT_BLUE = '34';
+    public const TEXT_MAGENTA = '35';
+    public const TEXT_CYAN = '36';
+    public const TEXT_GRAY = '37';
 
-    const TEXT_BRIGHT_BLACK = '90';
-    const TEXT_BRIGHT_RED = '91';
-    const TEXT_BRIGHT_GREEN = '92';
-    const TEXT_BRIGHT_YELLOW = '93';
-    const TEXT_BRIGHT_BLUE = '94';
-    const TEXT_BRIGHT_MAGENTA = '95';
-    const TEXT_BRIGHT_CYAN = '96';
-    const TEXT_BRIGHT_GRAY = '97';
+    public const TEXT_BRIGHT_BLACK = '90';
+    public const TEXT_BRIGHT_RED = '91';
+    public const TEXT_BRIGHT_GREEN = '92';
+    public const TEXT_BRIGHT_YELLOW = '93';
+    public const TEXT_BRIGHT_BLUE = '94';
+    public const TEXT_BRIGHT_MAGENTA = '95';
+    public const TEXT_BRIGHT_CYAN = '96';
+    public const TEXT_BRIGHT_GRAY = '97';
 
     // Background colors
-    const BACKGROUND_BLACK = '40';
-    const BACKGROUND_RED = '41';
-    const BACKGROUND_GREEN = '42';
-    const BACKGROUND_YELLOW = '43';
-    const BACKGROUND_BLUE = '44';
-    const BACKGROUND_MAGENTA = '45';
-    const BACKGROUND_CYAN = '46';
-    const BACKGROUND_GRAY = '47';
+    public const BACKGROUND_BLACK = '40';
+    public const BACKGROUND_RED = '41';
+    public const BACKGROUND_GREEN = '42';
+    public const BACKGROUND_YELLOW = '43';
+    public const BACKGROUND_BLUE = '44';
+    public const BACKGROUND_MAGENTA = '45';
+    public const BACKGROUND_CYAN = '46';
+    public const BACKGROUND_GRAY = '47';
 
-    const BACKGROUND_BRIGHT_BLACK = '100';
-    const BACKGROUND_BRIGHT_RED = '101';
-    const BACKGROUND_BRIGHT_GREEN = '102';
-    const BACKGROUND_BRIGHT_YELLOW = '103';
-    const BACKGROUND_BRIGHT_BLUE = '104';
-    const BACKGROUND_BRIGHT_MAGENTA = '105';
-    const BACKGROUND_BRIGHT_CYAN = '106';
-    const BACKGROUND_BRIGHT_GRAY = '107';
+    public const BACKGROUND_BRIGHT_BLACK = '100';
+    public const BACKGROUND_BRIGHT_RED = '101';
+    public const BACKGROUND_BRIGHT_GREEN = '102';
+    public const BACKGROUND_BRIGHT_YELLOW = '103';
+    public const BACKGROUND_BRIGHT_BLUE = '104';
+    public const BACKGROUND_BRIGHT_MAGENTA = '105';
+    public const BACKGROUND_BRIGHT_CYAN = '106';
+    public const BACKGROUND_BRIGHT_GRAY = '107';
 }

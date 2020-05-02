@@ -81,6 +81,12 @@ $elementFactory->createBlock(
     'error-block'
 )->render();
 
+// Create a block with the style of a success message.
+$elementFactory->createBlock(
+    'You did great!',
+    'success-block'
+)->render();
+
 $taskList = new TaskList();
 $task = (new class implements TaskInterface {
     /**
