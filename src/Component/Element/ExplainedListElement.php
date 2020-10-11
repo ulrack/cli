@@ -71,19 +71,24 @@ class ExplainedListElement implements ElementInterface
         );
 
         $columnWidth = max(
-            array_map('strlen', array_keys($items))
+            array_map('strlen', array_column($items, 'key'))
         ) + 4;
 
-        foreach ($items as $key => $description) {
-            $spaceless = ltrim($key);
-            $spaces = str_replace($spaceless, '', $key);
+        foreach ($items as $item) {
+            $spaceless = ltrim($item['key']);
+            $spaces = str_replace($spaceless, '', $item['key']);
             $this->writer->write($spaces);
             $this->keyStyle->apply();
             $this->writer->write($spaceless);
             $this->keyStyle->reset();
-            $this->writer->write(str_repeat(' ', $columnWidth - strlen($key)));
+            $this->writer->write(
+                str_repeat(
+                    ' ',
+                    $columnWidth - strlen($item['key'])
+                )
+            );
             $this->descriptionStyle->apply();
-            $this->writer->write($description);
+            $this->writer->write($item['description']);
             $this->descriptionStyle->reset();
             $this->writer->writeLine('');
         }
@@ -105,10 +110,10 @@ class ExplainedListElement implements ElementInterface
         ksort($items);
 
         foreach ($items as $key => $item) {
-            $return[str_repeat(
-                '  ',
-                $depth
-            ) . $key] = $item['description'];
+            $return[] = [
+                'description' => $item['description'],
+                'key' => str_repeat('  ', $depth) . $key
+            ];
 
             if (
                 isset($item['items'])

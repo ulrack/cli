@@ -36,8 +36,10 @@ class ExplainedListElementTest extends TestCase
         $keys = ['bar', 'baz'];
 
         $subject->addItem($description, ...$keys);
+        // Validate that a similarly named key gets outputted as well.
+        $subject->addItem($description, 'foo', 'baz');
 
-        $writer->expects(static::exactly(2))
+        $writer->expects(static::exactly(4))
             ->method('writeLine');
 
         $subject->render();
