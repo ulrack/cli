@@ -134,7 +134,7 @@ class ProgressElement implements ElementInterface
         return $this->progressCharacters['border']['left'] .
         str_repeat(
             $this->progressCharacters['progress']['done'],
-            $innerProgress - 1
+            $innerProgress
         ) .
         $this->progressCharacters['progress']['current'] .
         str_repeat(
