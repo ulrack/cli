@@ -1,3 +1,5 @@
+# DEPRECATION NOTICE: this package has been moved and improved at [grizz-it/cli](https://github.com/grizz-it/cli)
+
 [![Build Status](https://travis-ci.com/ulrack/cli.svg?branch=master)](https://travis-ci.com/ulrack/cli)
 
 # Ulrack CLI
